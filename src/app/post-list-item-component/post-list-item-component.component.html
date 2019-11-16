@@ -1,0 +1,14 @@
+<li *ngIf="title && content && created_at" [ngClass]="{'list-group-item': true, 'list-group-item-success': loveIts > 0, 'list-group-item-danger': loveIts < 0}">
+    <h2>{{title}}</h2>
+    <p>
+        {{content}}
+    </p>
+    <div class="date">{{created_at |  date: 'EEEE d MMMM y' | uppercase }}</div>
+    <div class="button-block">
+        <button class="btn btn-success" (click)="onAdd(id)">Love it !</button>
+        <button class="btn btn-danger" (click)="onSubtract(id)">Don't love it !</button>
+        <button class="btn btn-warning" (click)="onDelete(id)">Delete</button>
+        <button class="btn btn-active pull-right" style="cursor: initial;">Rank ({{ loveIts }})&nbsp;</button>
+    </div>
+</li>
+
